@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer type ="module" src="script.js" ></script>
+    <title>FINDISS</title>
+    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+    
+</head>
+<body>
+  
+    <div class="container" id="container">
+
+        <!-----Menu Area------->
+        <div class="menu">
+            <h2 class="menu-text">FINDISS</h2>
+        </div>
+        <div class="menu-logo">
+            <a href="https://github.com/Cyberbuddhika" target="_blank"><img id="github-logo" src="/media/github.png" 
+                alt="github logo" ></a>
+        </div>
+
+         <!-----MAP------->
+        <div id="issMap"></div>
+
+         <!-----Info Panel------->
+        <div class="info-panel">
+        <h1 id="heading">International Space Station</h1>
+        <a href="https://www.nasa.gov/international-space-station/" target="_blank">
+        <img id="logo" src="https://www.nasa.gov/wp-content/themes/nasa/assets/images/nasa-logo.svg" 
+        alt="NASA logo" ></a>
+        <p><strong>Latitude:</strong> <span id="latitude">value</span></p>
+        <p><strong>Longitude:</strong> <span id="longitude">value</span></p>
+        <p><strong>Velocity:</strong> <span id="velocity">value</span></p>
+        <p><strong>visibility:</strong> <span id="visibility">value</span></p>
+        <p><strong>Altitude:</strong> <span id="altitude">value</span></p>
+        <!-- <img id="flag" alt="Girl in a jacket" width="100" height="50"> -->
+
+        <span class="green-circle"></span>
+        <span>Active Mission</span>
+        <a href="https://www.nasa.gov/mission/expedition-70/" target="_blank">
+        <p><strong>Expedition 70</strong></p></a>
+
+        
+
+        <img id="issGif" src="https://upload.wikimedia.org/wikipedia/commons/f/fb/ISS-assembly-animation.gif" 
+        alt="Animation of the assembly of the International Space Station" >
+        <!-- Add more details as needed -->
+        <div id="footer-container">
+        <p class="footer">©2023 <a href="https://github.com/Cyberbuddhika" target="_blank">Cyberbuddhika</a>. All rights reserved. Map data and imagery are provided by <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap®</a> contributors under the Open Database License. <a href="https://wheretheiss.at/w/developer" target="_blank">'Where is the ISS at' API</a> is used under its respective license. All trademarks and copyrights are the property of their respective owners.</p>
+        </div>
+        </div>
+
+        <!-----Description & News Area------->
+        <div class="text-area">
+
+            <!-----Description------->
+            <p id="additionalText">International Space Station (ISS) - humanity's largest outpost in low Earth orbit. A unique collaboration between NASA (USA), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada), the ISS is a hub for cutting-edge research. From astrobiology to physics, it's a cradle of scientific discovery, paving the way for future expeditions to the Moon and Mars.</p>
+            
+            <!-----News Area------->
+            <h4 id="news-heading">Latest News </h4>
+            <div id="news-container">
+            <!-- <div class="news">
+                <img id="news-image" class="news-item" src="/media/planet.png" 
+        alt="Animation of the assembly of the International Space Station" >
+        <a href="https://github.com/Cyberbuddhika" target="_blank" class="news-item">10 space station questions answered on its 25th anniversary</a>
+            </div> -->
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>
