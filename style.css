@@ -1,0 +1,160 @@
+/* font-family: 'Orbitron', sans-serif;
+font-family: 'Source Code Pro', monospace; */
+:root {
+    --heading: 'Orbitron', sans-serif;
+    --body: 'Source Code Pro', monospace;
+    --bgcolor:rgba(207, 230, 243, 0.9);
+    --lightbgcolor:#E0E2E3;
+    --fontcolr:#041154;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body);
+    background-color:var(--bgcolor); 
+    color: var(--fontcolr);
+
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* This creates 6 equal columns */
+    grid-template-rows: auto; /* Adjust the rows as needed */
+    gap: 1rem;
+    padding: 0 0 0 1rem;
+    /* background-color:var(--bgcolor);  */
+    height: 100vh;
+}
+
+/* ------ Menu Area Styles ------ */ 
+
+.menu {
+    display: flex;
+    grid-column: 1 /2; /* Spans first two columns */
+    grid-row: 1;
+    font-family: var(--heading);
+}
+
+.menu-logo{
+    grid-column: 4 / 5; /* Spans first two columns */
+    grid-row: 1;
+    text-align: right;
+    margin-top: 1rem;
+    justify-content: space-around;
+}
+
+.menu-text{
+    font-size: 1.2rem;
+}
+
+#github-logo{
+    width: 15%;
+}
+
+
+/* ------ Map Styles ------ */ 
+
+#issMap {
+    grid-column: 1 / 5; /* Adjust as per your layout needs */
+    grid-row: 2 / 4; /* Spans two rows */
+    height: 400px;
+}
+
+/* ------ Info Panel ------ */ 
+
+.info-panel {
+    padding: 2rem 0 0 1rem;
+    grid-column: 5 / 7; /* Spans last two columns */
+    grid-row: 1 / 5; /* Spans two rows */
+    background-color: var(--lightbgcolor);
+    overflow-y: auto;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Blinking Green light  */
+.green-circle{
+    height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+}
+
+#heading{
+    font-family: var(--heading);
+    font-size:2rem;
+}
+
+#issGif{
+    width: 250px;
+}
+
+#footer-container{
+    margin-top: 0rem;
+}
+
+.footer{
+    font-size: x-small;
+    text-align: left;
+}
+
+/* ------ Description & News Area ------ */ 
+
+.text-area {
+    grid-column: 1 / 5; /* Adjust according to your layout */
+    grid-row: 4; /* Positioned in the third row */
+    padding-bottom: 1rem;
+    margin-top: 0;
+   
+}
+
+/* ------ Description ------ */ 
+#additionalText{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* ------ News Area ------ */ 
+#news-heading{
+text-align: center;
+margin: 0.25rem
+}
+
+.news{
+    display: flex;
+    align-items:center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+
+.news-item{
+    margin: 0;
+    padding: 0.25rem;
+    text-decoration: none;
+}
+
+#news-image{
+    width:2%;
+}
+
+/*  Mobile CSS */ 
+
+
+/* Rest of your CSS */
