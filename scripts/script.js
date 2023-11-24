@@ -135,7 +135,11 @@ setInterval(updateIssPosition, intTime);
 const screenHeight = window.screen.height;
 document.getElementById("container").style.height = screenHeight;
 
-// Adjusting top-margine for footer in Info panel
-const idealWindowSize = 900;
-const newMargine = screenHeight - idealWindowSize;
-document.getElementById("footer-container").style.marginTop = newMargine;
+// Adjusting top-margin for footer in Info panel
+const idealWindowSize = 1020;
+let newMargin = screenHeight - idealWindowSize;
+newMargin = newMargin > 0 ? newMargin : 0; // Ensure margin is not negative
+document.getElementById("footer-container").style.marginTop = newMargin + "px";
+
+console.log(newMargin);
+console.log(document.getElementById("footer-container").style.marginTop);
