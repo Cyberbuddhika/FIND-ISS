@@ -3,7 +3,7 @@ import {
   mapZoomLevel,
   issIcon,
   intTime,
-  noOfArticles,
+  noOfArticlesToShow,
   newsApiUrl,
 } from "./config.js";
 
@@ -18,20 +18,28 @@ let map;
  * @returns (latitude, longitude, velocity, visibility, altitude)
  */
 const getIssData = async function (url) {
-  const response = await fetch(url);
-  const data = await response.json();
-  const { latitude, longitude, velocity, visibility, altitude } = data; // using deconstruction method to get the data. less code.
-  return { latitude, longitude, velocity, visibility, altitude };
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const { latitude, longitude, velocity, visibility, altitude } = data; // using deconstruction method to get the data. less code.
+    return { latitude, longitude, velocity, visibility, altitude };
+  } catch (err) {
+    console.log(`Error from getting ISS Data: ${err}`);
+  }
 };
 
 /*/**
  * Function to update ISS Marker position
  */
 const updateIssPosition = async function () {
-  const cordinates = await getIssData(apiUrl);
-  map.panTo([cordinates.latitude, cordinates.longitude]);
-  issMarker.setLatLng([cordinates.latitude, cordinates.longitude]);
-  updateIssDataOnScreen(cordinates);
+  try {
+    const cordinates = await getIssData(apiUrl);
+    map.panTo([cordinates.latitude, cordinates.longitude]);
+    issMarker.setLatLng([cordinates.latitude, cordinates.longitude]);
+    updateIssDataOnScreen(cordinates);
+  } catch (err) {
+    console.log(`Error from Updating ISS Position: ${err}`);
+  }
 };
 
 /*/**
@@ -60,10 +68,14 @@ const updateIssDataOnScreen = function (data) {
  * @returns newsArticles
  */
 const getNews = async function (url) {
-  const response = await fetch(url);
-  const newsData = await response.json();
-  const newsArticles = newsData.articles;
-  return newsArticles;
+  try {
+    const response = await fetch(url);
+    const newsData = await response.json();
+    const newsArticles = newsData.articles;
+    return newsArticles;
+  } catch (err) {
+    console.log(`Error from getting News: ${err}`);
+  }
 };
 
 //------------------------------------------------------------------>
@@ -98,7 +110,11 @@ getIssData(apiUrl).then((data) => {
 // Update HTML with new News data
 */
 getNews(newsApiUrl).then((artcles) => {
-  for (let i = 0; i < noOfArticles; i++) {
+  const lengthOfArticles = artcles.length;
+  let showingArticleQty = noOfArticlesToShow;
+  showingArticleQty =
+    lengthOfArticles > showingArticleQty ? showingArticleQty : lengthOfArticles; // fall back to length of articles array if its smaller than the configured value.
+  for (let i = 0; i < showingArticleQty; i++) {
     let newsHtml = `<div class="news">
 <img id="news-image" class="news-item" src="/media/planet.png"
 alt="blue color planet icon" >

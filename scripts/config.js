@@ -5,7 +5,7 @@ export const apiUrl = "https://api.wheretheiss.at/v1/satellites/25544"; // Where
 export const mapZoomLevel = 4;
 export const issIcon = "./media/International_Space_Station.png";
 export const intTime = 2000;
-export const noOfArticles = 2;
+export const noOfArticlesToShow = 4;
 const newsApiKey = news_Api_Key;
 
 const date = gettingDate();
