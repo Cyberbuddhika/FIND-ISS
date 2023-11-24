@@ -1,3 +1,9 @@
+/*!
+ * FIND_ISS v1.0.0
+ * Copyright (c) 2023 Buddhika Thanura
+ * MIT Licensed
+ */
+
 import { gettingDate } from "./helper.js";
 import { news_Api_Key } from "./secret.js";
 
